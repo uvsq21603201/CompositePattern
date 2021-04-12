@@ -4,7 +4,7 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Personnel {
+public class Personnel implements Groupe{
   public static LocalDate DATE_NAISSANCE = LocalDate.of(2000, 1, 1);
   
   private final String nom;
@@ -48,10 +48,7 @@ public class Personnel {
 
 	  @Override
 	  public String toString() {
-	    return "Personnel{" +
-	            "Nom='" + this.nom + '\'' +
-	            ", Prénom='" + this.prenom + '\'' +
-	            '}';
+	    return "Personnel{Nom=" + this.nom + "," + " Prénom=" + this.prenom + "} ";
 	  }
   
   public static class Builder{
@@ -92,4 +89,13 @@ public class Personnel {
 	  
 	  
   }
+
+@Override
+public void print() {
+	System.out.println(this.toString());			
+	for(String f: fonctions) {
+		System.out.println(f+" ");
+	}System.out.print("\n");
+	
+}
 }
