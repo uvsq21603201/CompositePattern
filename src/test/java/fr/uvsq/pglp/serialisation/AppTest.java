@@ -1,4 +1,4 @@
-package fr.uvsq.poo.compte;
+package fr.uvsq.pglp.serialisation;
 
 import org.junit.Test;
 
