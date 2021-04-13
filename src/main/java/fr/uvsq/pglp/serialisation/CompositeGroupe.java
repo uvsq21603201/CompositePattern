@@ -11,7 +11,7 @@ public class CompositeGroupe implements Groupe {
 	}
 	@Override
 	public void print() {
-		System.out.println("Composite Groupe: "+this.nom);
+		System.out.println("\nComposite Groupe: "+this.nom);
 		for(Groupe g: annuaire) {
 			g.print();
 		}

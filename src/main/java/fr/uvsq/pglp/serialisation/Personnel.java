@@ -48,7 +48,7 @@ public class Personnel implements Groupe{
 
 	  @Override
 	  public String toString() {
-	    return "Personnel{Nom=" + this.nom + "," + " Prénom=" + this.prenom + "} ";
+	    return "Personnel{Nom=" + this.nom + "," + " Prénom=" + this.prenom + "}\n";
 	  }
   
   public static class Builder{
@@ -92,9 +92,10 @@ public class Personnel implements Groupe{
 
 @Override
 public void print() {
-	System.out.println(this.toString());			
+	System.out.print(this.toString());			
 	for(String f: fonctions) {
-		System.out.println(f+" ");
+		System.out.print(f);
+		if(fonctions.size()>1) System.out.print("/");
 	}System.out.print("\n");
 	
 }
