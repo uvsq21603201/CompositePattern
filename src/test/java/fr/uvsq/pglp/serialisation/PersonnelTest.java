@@ -46,7 +46,7 @@ public class PersonnelTest {
 
 	  @Test
 	  public void creerChaineCaracterePersonnelValideTest() {
-	    assertEquals("Personnel{Nom=Skywalker, Prénom=Luke}\n", luke.toString());
+	    assertEquals("Personnel{Nom=Skywalker, Prénom=Luke, Date de naissance=2007-10-04, Numéros=[]}", luke.toString());
 	  }
 
 	  @Test

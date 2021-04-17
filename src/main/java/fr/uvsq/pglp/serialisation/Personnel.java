@@ -2,9 +2,11 @@ package fr.uvsq.pglp.serialisation;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Iterator;
 import java.util.List;
 
-public class Personnel implements Groupe{
+public class Personnel implements Groupe {
   public static LocalDate DATE_NAISSANCE = LocalDate.of(2000, 1, 1);
   
   private final String nom;
@@ -31,7 +33,7 @@ public class Personnel implements Groupe{
 	  }
 	  
 	  public String getDescription() {
-		  return this.prenom + ' '+this.nom;
+		  return this.prenom +" "+this.nom;
 	  }
 
 	  public List<String> getFonctions() {
@@ -48,10 +50,12 @@ public class Personnel implements Groupe{
 
 	  @Override
 	  public String toString() {
-	    return "Personnel{Nom=" + this.nom + "," + " Prénom=" + this.prenom + "}\n";
+	    return "Personnel{Nom=" + this.nom + ", Prénom=" + this.prenom + ", Date de naissance="+ this.dateNaissance+", Numéros=" +this.numeros+"}";
 	  }
-  
-  public static class Builder{
+
+
+
+	public static class Builder{
 	  private final String nom;
 	  private final String prenom;
 	  private final List<String> fonctions;
@@ -92,11 +96,16 @@ public class Personnel implements Groupe{
 
 @Override
 public void print() {
-	System.out.print(this.toString());			
+	System.out.print(this.toString());
+	System.out.print("\n");
 	for(String f: fonctions) {
 		System.out.print(f);
 		if(fonctions.size()>1) System.out.print("/");
-	}System.out.print("\n");
-	
+	} System.out.print("\n");
 }
+
+	@Override
+	public boolean isCompositeGroupe() {
+		return false;
+	}
 }
